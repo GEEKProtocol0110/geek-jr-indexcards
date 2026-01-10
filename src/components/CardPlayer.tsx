@@ -1,18 +1,26 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import type { Card } from "@/lib/types";
 import { loadState, saveState, resetState } from "@/lib/storage";
 import { getDefaultState, isDue, markResult } from "@/lib/leitner";
 import { ProgressBar } from "./ProgressBar";
 
-function speak(text: string) {
+function speak(text: string, isPreview = false) {
   if (typeof window === "undefined") return;
   const synth = window.speechSynthesis;
   if (!synth) return;
   synth.cancel();
   const u = new SpeechSynthesisUtterance(text);
-  u.rate = 0.9;
+  u.lang = 'en-US';
+  if (isPreview) {
+    u.rate = 0.6;
+    u.pitch = 1.2;
+  } else {
+    u.rate = 0.9;
+    u.pitch = 1.0;
+  }
   synth.speak(u);
 }
 
@@ -25,6 +33,7 @@ export default function CardPlayer({
   sessionSize?: number;
   timeLimitSec?: number;
 }) {
+  const router = useRouter();
   const [stateMap, setStateMap] = useState<Record<string, any>>({});
   const [sessionDone, setSessionDone] = useState(false);
   const [idx, setIdx] = useState(0);
@@ -155,89 +164,107 @@ export default function CardPlayer({
   return (
     <div className="space-y-6">
       {/* Timer + session size UI */}
-      <div className="flex items-center justify-between text-sm opacity-80">
-        <div>
-          Daily session: <span className="font-semibold">{total}</span> cards
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+        <div className="text-sm opacity-80">
+          Daily session: <span className="font-semibold text-white">{total}</span> cards
         </div>
 
-        <div className="flex items-center gap-3">
-          <span>
+        <div className="flex items-center gap-4">
+          <div className="text-sm opacity-80">
             Time:{" "}
-            <span className="font-semibold">
+            <span className="font-semibold text-white">
               {Math.floor(secondsLeft / 60)}:
               {String(secondsLeft % 60).padStart(2, "0")}
             </span>
-          </span>
+          </div>
 
           <button
             onClick={() => setPaused((p) => !p)}
-            className="px-3 py-1 rounded-lg bg-white/10 hover:bg-white/15 border border-white/10"
+            className={`px-4 py-2 rounded-xl font-semibold transition-all ${
+              paused
+                ? 'bg-green-500/20 hover:bg-green-500/30 border border-green-500/30 text-green-200'
+                : 'bg-orange-500/20 hover:bg-orange-500/30 border border-orange-500/30 text-orange-200'
+            }`}
           >
-            {paused ? "Resume" : "Pause"}
+            {paused ? "▶️ Resume" : "⏸️ Pause"}
+          </button>
+
+          <button
+            onClick={() => router.back()}
+            className="px-4 py-2 rounded-xl font-semibold transition-all bg-gray-500/20 hover:bg-gray-500/30 border border-gray-500/30 text-gray-200"
+          >
+            🚪 Exit
           </button>
         </div>
       </div>
 
       <ProgressBar value={doneCount} max={total} />
 
-      <div className="rounded-3xl bg-white/5 border border-white/10 p-6">
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <div className="text-sm uppercase tracking-widest opacity-70">
+      <div className="rounded-3xl bg-gradient-to-br from-white/5 to-white/10 border border-white/20 p-6 md:p-8 shadow-lg">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-6">
+          <div className="flex-1">
+            <div className="text-sm uppercase tracking-widest opacity-70 mb-2">
               {current.category ?? "Deck"}
             </div>
-            <div className="text-5xl md:text-6xl font-black mt-2">
+            <div className="text-6xl md:text-7xl lg:text-8xl font-black mb-4 leading-tight">
               {current.word}
             </div>
           </div>
 
-          <button
-            onClick={() => speak(current.word)}
-            className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-white/10"
-          >
-            🔊 Say
-          </button>
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={() => speak(current.word)}
+              className="px-6 py-3 rounded-2xl bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 text-blue-200 font-semibold transition-colors"
+            >
+              🔊 Word
+            </button>
+            <button
+              onClick={() => speak(current.soundHint || current.word, true)}
+              className="px-6 py-3 rounded-2xl bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 text-purple-200 font-semibold transition-colors"
+            >
+              🔊 Hint
+            </button>
+          </div>
         </div>
 
         {/* Optional image support */}
         {current.image && (
-          <div className="mt-6 rounded-2xl overflow-hidden border border-white/10 bg-black/20">
+          <div className="mt-6 rounded-2xl overflow-hidden border border-white/20 bg-black/20 shadow-inner">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={current.image}
               alt={current.word}
-              className="w-full h-64 object-cover"
+              className="w-full h-48 md:h-64 object-cover"
             />
           </div>
         )}
 
-        <div className="mt-6 space-y-3">
-          <div className="rounded-2xl bg-black/20 p-4 border border-white/10">
-            <div className="text-sm opacity-70 mb-1">Parent Prompt</div>
-            <div className="text-lg">
+        <div className="mt-6 space-y-4">
+          <div className="rounded-2xl bg-black/30 p-5 border border-white/20">
+            <div className="text-sm opacity-70 mb-2">Parent Prompt</div>
+            <div className="text-lg md:text-xl font-medium">
               {current.prompt ??
                 "Say the word slowly. Ask them to point or repeat."}
             </div>
           </div>
 
           {current.soundHint && (
-            <div className="text-sm opacity-75">
-              Sound hint:{" "}
-              <span className="font-semibold">{current.soundHint}</span>
+            <div className="text-sm opacity-75 bg-white/5 rounded-lg p-3 border border-white/10">
+              Sound hint: <span className="font-semibold text-white">{current.soundHint}</span>
             </div>
           )}
         </div>
 
-        <div className="mt-6 flex flex-col md:flex-row gap-3">
+        <div className="mt-8 flex flex-col sm:flex-row gap-4">
           <button
             onClick={() => updateCard(false)}
-            className="flex-1 px-4 py-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10"
+            className="flex-1 px-6 py-4 rounded-2xl bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 text-red-200 font-semibold transition-all hover:scale-105"
           >
             Not yet
           </button>
           <button
             onClick={() => updateCard(true)}
-            className="flex-1 px-4 py-3 rounded-2xl bg-white/20 hover:bg-white/25 border border-white/10 font-semibold"
+            className="flex-1 px-6 py-4 rounded-2xl bg-green-500/20 hover:bg-green-500/30 border border-green-500/30 text-green-200 font-semibold transition-all hover:scale-105"
           >
             Got it ✅
           </button>
@@ -245,24 +272,24 @@ export default function CardPlayer({
       </div>
 
       {sessionDone && (
-        <div className="rounded-2xl bg-white/5 border border-white/10 p-5">
-          <div className="text-xl font-semibold mb-2">Session complete 🎉</div>
-          <p className="opacity-80 mb-4">
+        <div className="rounded-2xl bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20 p-6 text-center">
+          <div className="text-2xl font-bold mb-2 text-green-200">Session complete 🎉</div>
+          <p className="opacity-80 mb-6 text-lg">
             End happy. Come back tomorrow for your next Daily {sessionSize}.
           </p>
 
-          <div className="flex flex-col md:flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={restartSession}
-              className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-white/10"
+              className="px-6 py-3 rounded-xl bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 text-blue-200 font-semibold transition-colors"
             >
-              Run again
+              🔄 Run again
             </button>
             <button
               onClick={hardReset}
-              className="px-4 py-2 rounded-xl bg-red-500/20 hover:bg-red-500/30 border border-red-500/30"
+              className="px-6 py-3 rounded-xl bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 text-red-200 font-semibold transition-colors"
             >
-              Reset progress
+              🔄 Reset progress
             </button>
           </div>
         </div>

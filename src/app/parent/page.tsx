@@ -72,56 +72,63 @@ export default function ParentPage() {
   }
 
   return (
-    <main className="space-y-6">
-      <header className="space-y-2">
+    <main className="space-y-8">
+      <header className="space-y-4">
         <div className="flex items-center justify-between gap-4">
-          <h1 className="text-3xl font-black">Parent Mode</h1>
+          <div>
+            <h1 className="text-4xl font-black">Parent Mode</h1>
+            <p className="opacity-80 mt-2">
+              Adjust settings and track progress. Keep it short and happy.
+            </p>
+          </div>
           <Link
             href="/cards"
-            className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-white/10"
+            className="px-4 py-2 rounded-xl bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 text-blue-200 transition-colors"
           >
             Back to session →
           </Link>
         </div>
-        <p className="opacity-80">
-          Adjust the Daily session size and timer. Keep it short and happy.
-        </p>
       </header>
 
-      <section className="rounded-2xl bg-white/5 border border-white/10 p-5 space-y-4">
-        <div className="text-lg font-semibold">Session Settings</div>
+      <section className="rounded-3xl bg-gradient-to-br from-white/5 to-white/10 border border-white/20 p-6 md:p-8 shadow-lg">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
+            <span className="text-green-400 font-bold">⚙️</span>
+          </div>
+          <h2 className="text-xl font-semibold">Session Settings</h2>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <div className="text-sm opacity-70">Daily cards</div>
-            <div className="flex gap-2">
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-3">
+            <div className="text-sm font-medium opacity-80">Daily cards</div>
+            <div className="flex gap-3">
               {[3, 5, 10].map((n) => (
                 <button
                   key={n}
                   onClick={() => setSettings((s) => ({ ...s, sessionSize: n as 3 | 5 | 10 }))}
-                  className={`px-4 py-2 rounded-xl border ${
+                  className={`flex-1 px-4 py-3 rounded-xl border transition-all duration-200 ${
                     settings.sessionSize === n
-                      ? "bg-white/20 border-white/20"
-                      : "bg-white/5 border-white/10 hover:bg-white/10"
+                      ? "bg-blue-500/30 border-blue-500/50 text-blue-200 shadow-lg scale-105"
+                      : "bg-white/5 border-white/10 hover:bg-white/10 hover:scale-105"
                   }`}
                 >
-                  {n}
+                  {n} cards
                 </button>
               ))}
             </div>
           </div>
 
-          <div className="space-y-2">
-            <div className="text-sm opacity-70">Timer</div>
-            <div className="flex gap-2">
+          <div className="space-y-3">
+            <div className="text-sm font-medium opacity-80">Timer</div>
+            <div className="flex gap-3">
               {[60, 120, 180].map((n) => (
                 <button
                   key={n}
                   onClick={() => setSettings((s) => ({ ...s, timeLimitSec: n as 60 | 120 | 180 }))}
-                  className={`px-4 py-2 rounded-xl border ${
+                  className={`flex-1 px-4 py-3 rounded-xl border transition-all duration-200 ${
                     settings.timeLimitSec === n
-                      ? "bg-white/20 border-white/20"
-                      : "bg-white/5 border-white/10 hover:bg-white/10"
+                      ? "bg-purple-500/30 border-purple-500/50 text-purple-200 shadow-lg scale-105"
+                      : "bg-white/5 border-white/10 hover:bg-white/10 hover:scale-105"
                   }`}
                 >
                   {n === 60 ? "1 min" : n === 120 ? "2 min" : "3 min"}
@@ -131,9 +138,11 @@ export default function ParentPage() {
           </div>
         </div>
 
-        <div className="text-sm opacity-70">
-          Current: <span className="font-semibold">{settings.sessionSize}</span> cards /{" "}
-          <span className="font-semibold">{settings.timeLimitSec}</span> seconds
+        <div className="mt-6 p-4 rounded-xl bg-black/20 border border-white/10">
+          <div className="text-sm opacity-70">
+            Current: <span className="font-semibold text-white">{settings.sessionSize}</span> cards /{" "}
+            <span className="font-semibold text-white">{Math.floor(settings.timeLimitSec / 60)}</span> minutes
+          </div>
         </div>
       </section>
 
@@ -185,10 +194,16 @@ export default function ParentPage() {
         </div>
       </section>
 
-      <section className="rounded-2xl bg-white/5 border border-white/10 p-5 space-y-2">
-        <div className="text-lg font-semibold">Pro tip</div>
-        <p className="opacity-80">
+      <section className="rounded-3xl bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 p-6 md:p-8 shadow-lg">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
+            <span className="text-yellow-400 font-bold">💡</span>
+          </div>
+          <h2 className="text-xl font-semibold">Pro tip</h2>
+        </div>
+        <p className="opacity-80 text-lg leading-relaxed">
           At 1 year old, stop sessions early. The goal is a happy association with words.
+          Keep it fun and celebrate small victories!
         </p>
       </section>
     </main>

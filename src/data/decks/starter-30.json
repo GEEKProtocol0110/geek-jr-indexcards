@@ -1,5 +1,5 @@
 {
-  "name": "Starter 30",
+  "name": "Expanded Starter Deck",
   "cards": [
     { "id": "family-mom", "word": "MOM", "category": "Family", "soundHint": "Mmmom", "prompt": "Where’s MOM?" },
     { "id": "family-dad", "word": "DAD", "category": "Family", "soundHint": "D-d-dad", "prompt": "Point to DAD." },
@@ -34,6 +34,170 @@
     { "id": "color-blue", "word": "BLUE", "category": "Colors", "soundHint": "Bloo", "prompt": "Point to BLUE." },
     { "id": "color-green", "word": "GREEN", "category": "Colors", "soundHint": "Greeeen", "prompt": "Find GREEN." },
     { "id": "color-yellow", "word": "YELLOW", "category": "Colors", "soundHint": "Yel-low", "prompt": "Show YELLOW." },
-    { "id": "color-black", "word": "BLACK", "category": "Colors", "soundHint": "Blaaack", "prompt": "Find BLACK." }
+    { "id": "color-black", "word": "BLACK", "category": "Colors", "soundHint": "Blaaack", "prompt": "Find BLACK." },
+    { "id": "number-1", "word": "1", "category": "Numbers", "soundHint": "One", "prompt": "Count to 1", "image": "/cards/numbers/1.jpg" },
+
+    { "id": "number-2", "word": "2", "category": "Numbers", "soundHint": "Two", "prompt": "Count to 2", "image": "/cards/numbers/2.jpg" },
+
+    { "id": "number-3", "word": "3", "category": "Numbers", "soundHint": "Three", "prompt": "Count to 3", "image": "/cards/numbers/3.jpg" },
+
+    { "id": "number-4", "word": "4", "category": "Numbers", "soundHint": "Four", "prompt": "Count to 4", "image": "/cards/numbers/4.jpg" },
+
+    { "id": "number-5", "word": "5", "category": "Numbers", "soundHint": "Five", "prompt": "Count to 5", "image": "/cards/numbers/5.jpg" },
+
+    { "id": "spelled-zero", "word": "ZERO", "category": "Spelled Numbers", "soundHint": "Zero", "prompt": "Spell ZERO", "image": "/cards/spelled/zero.jpg" },
+
+    { "id": "spelled-one", "word": "ONE", "category": "Spelled Numbers", "soundHint": "One", "prompt": "Spell ONE", "image": "/cards/spelled/one.jpg" },
+
+    { "id": "spelled-two", "word": "TWO", "category": "Spelled Numbers", "soundHint": "Two", "prompt": "Spell TWO", "image": "/cards/spelled/two.jpg" },
+
+    { "id": "spelled-three", "word": "THREE", "category": "Spelled Numbers", "soundHint": "Three", "prompt": "Spell THREE", "image": "/cards/spelled/three.jpg" },
+
+    { "id": "spelled-four", "word": "FOUR", "category": "Spelled Numbers", "soundHint": "Four", "prompt": "Spell FOUR", "image": "/cards/spelled/four.jpg" },
+
+    { "id": "spelled-five", "word": "FIVE", "category": "Spelled Numbers", "soundHint": "Five", "prompt": "Spell FIVE", "image": "/cards/spelled/five.jpg" },
+
+    { "id": "body-head", "word": "HEAD", "category": "Body Parts", "soundHint": "Head", "prompt": "Point to your HEAD", "image": "/cards/body/head.jpg" },
+
+    { "id": "body-eyes", "word": "EYES", "category": "Body Parts", "soundHint": "Eyes", "prompt": "Point to your EYES", "image": "/cards/body/eyes.jpg" },
+
+    { "id": "body-nose", "word": "NOSE", "category": "Body Parts", "soundHint": "Nose", "prompt": "Point to your NOSE", "image": "/cards/body/nose.jpg" },
+
+    { "id": "body-mouth", "word": "MOUTH", "category": "Body Parts", "soundHint": "Mouth", "prompt": "Point to your MOUTH", "image": "/cards/body/mouth.jpg" },
+
+    { "id": "body-ears", "word": "EARS", "category": "Body Parts", "soundHint": "Ears", "prompt": "Point to your EARS", "image": "/cards/body/ears.jpg" },
+
+    { "id": "sight-the", "word": "THE", "category": "Sight Words", "soundHint": "The", "prompt": "Read THE", "image": "/cards/sight/the.jpg" },
+
+    { "id": "sight-and", "word": "AND", "category": "Sight Words", "soundHint": "And", "prompt": "Read AND", "image": "/cards/sight/and.jpg" },
+
+    { "id": "sight-you", "word": "YOU", "category": "Sight Words", "soundHint": "You", "prompt": "Read YOU", "image": "/cards/sight/you.jpg" },
+
+    { "id": "sight-it", "word": "IT", "category": "Sight Words", "soundHint": "It", "prompt": "Read IT", "image": "/cards/sight/it.jpg" },
+
+    { "id": "sight-in", "word": "IN", "category": "Sight Words", "soundHint": "In", "prompt": "Read IN", "image": "/cards/sight/in.jpg" },
+
+    { "id": "sight-said", "word": "SAID", "category": "Sight Words", "soundHint": "Said", "prompt": "Read SAID", "image": "/cards/sight/said.jpg" },
+
+    { "id": "sight-for", "word": "FOR", "category": "Sight Words", "soundHint": "For", "prompt": "Read FOR", "image": "/cards/sight/for.jpg" },
+
+    { "id": "sight-up", "word": "UP", "category": "Sight Words", "soundHint": "Up", "prompt": "Read UP", "image": "/cards/sight/up.jpg" },
+
+    { "id": "sight-look", "word": "LOOK", "category": "Sight Words", "soundHint": "Look", "prompt": "Read LOOK", "image": "/cards/sight/look.jpg" },
+
+    { "id": "sight-is", "word": "IS", "category": "Sight Words", "soundHint": "Is", "prompt": "Read IS", "image": "/cards/sight/is.jpg" },
+
+    { "id": "sight-go", "word": "GO", "category": "Sight Words", "soundHint": "Go", "prompt": "Read GO", "image": "/cards/sight/go.jpg" },
+
+    { "id": "sight-we", "word": "WE", "category": "Sight Words", "soundHint": "We", "prompt": "Read WE", "image": "/cards/sight/we.jpg" },
+
+    { "id": "sight-little", "word": "LITTLE", "category": "Sight Words", "soundHint": "Little", "prompt": "Read LITTLE", "image": "/cards/sight/little.jpg" },
+
+    { "id": "sight-down", "word": "DOWN", "category": "Sight Words", "soundHint": "Down", "prompt": "Read DOWN", "image": "/cards/sight/down.jpg" },
+
+    { "id": "sight-can", "word": "CAN", "category": "Sight Words", "soundHint": "Can", "prompt": "Read CAN", "image": "/cards/sight/can.jpg" },
+
+    { "id": "sight-see", "word": "SEE", "category": "Sight Words", "soundHint": "See", "prompt": "Read SEE", "image": "/cards/sight/see.jpg" },
+
+    { "id": "sight-not", "word": "NOT", "category": "Sight Words", "soundHint": "Not", "prompt": "Read NOT", "image": "/cards/sight/not.jpg" },
+
+    { "id": "sight-one", "word": "ONE", "category": "Sight Words", "soundHint": "One", "prompt": "Read ONE", "image": "/cards/sight/one.jpg" },
+
+    { "id": "sight-my", "word": "MY", "category": "Sight Words", "soundHint": "My", "prompt": "Read MY", "image": "/cards/sight/my.jpg" },
+
+    { "id": "sight-me", "word": "ME", "category": "Sight Words", "soundHint": "Me", "prompt": "Read ME", "image": "/cards/sight/me.jpg" },
+
+    { "id": "sight-big", "word": "BIG", "category": "Sight Words", "soundHint": "Big", "prompt": "Read BIG", "image": "/cards/sight/big.jpg" },
+
+    { "id": "sight-come", "word": "COME", "category": "Sight Words", "soundHint": "Come", "prompt": "Read COME", "image": "/cards/sight/come.jpg" },
+
+    { "id": "sight-blue", "word": "BLUE", "category": "Sight Words", "soundHint": "Blue", "prompt": "Read BLUE", "image": "/cards/sight/blue.jpg" },
+
+    { "id": "sight-red", "word": "RED", "category": "Sight Words", "soundHint": "Red", "prompt": "Read RED", "image": "/cards/sight/red.jpg" },
+
+    { "id": "sight-where", "word": "WHERE", "category": "Sight Words", "soundHint": "Where", "prompt": "Read WHERE", "image": "/cards/sight/where.jpg" },
+
+    { "id": "sight-jump", "word": "JUMP", "category": "Sight Words", "soundHint": "Jump", "prompt": "Read JUMP", "image": "/cards/sight/jump.jpg" },
+
+    { "id": "sight-away", "word": "AWAY", "category": "Sight Words", "soundHint": "Away", "prompt": "Read AWAY", "image": "/cards/sight/away.jpg" },
+
+    { "id": "sight-here", "word": "HERE", "category": "Sight Words", "soundHint": "Here", "prompt": "Read HERE", "image": "/cards/sight/here.jpg" },
+
+    { "id": "sight-help", "word": "HELP", "category": "Sight Words", "soundHint": "Help", "prompt": "Read HELP", "image": "/cards/sight/help.jpg" },
+
+    { "id": "sight-make", "word": "MAKE", "category": "Sight Words", "soundHint": "Make", "prompt": "Read MAKE", "image": "/cards/sight/make.jpg" },
+
+    { "id": "sight-yellow", "word": "YELLOW", "category": "Sight Words", "soundHint": "Yellow", "prompt": "Read YELLOW", "image": "/cards/sight/yellow.jpg" },
+
+    { "id": "sight-two", "word": "TWO", "category": "Sight Words", "soundHint": "Two", "prompt": "Read TWO", "image": "/cards/sight/two.jpg" },
+
+    { "id": "sight-play", "word": "PLAY", "category": "Sight Words", "soundHint": "Play", "prompt": "Read PLAY", "image": "/cards/sight/play.jpg" },
+
+    { "id": "sight-run", "word": "RUN", "category": "Sight Words", "soundHint": "Run", "prompt": "Read RUN", "image": "/cards/sight/run.jpg" },
+
+    { "id": "sight-find", "word": "FIND", "category": "Sight Words", "soundHint": "Find", "prompt": "Read FIND", "image": "/cards/sight/find.jpg" },
+
+    { "id": "sight-three", "word": "THREE", "category": "Sight Words", "soundHint": "Three", "prompt": "Read THREE", "image": "/cards/sight/three.jpg" },
+
+    { "id": "sight-funny", "word": "FUNNY", "category": "Sight Words", "soundHint": "Funny", "prompt": "Read FUNNY", "image": "/cards/sight/funny.jpg" },
+
+    { "id": "sight-what", "word": "WHAT", "category": "Sight Words", "soundHint": "What", "prompt": "Read WHAT", "image": "/cards/sight/what.jpg" },
+
+    { "id": "sight-all", "word": "ALL", "category": "Sight Words", "soundHint": "All", "prompt": "Read ALL", "image": "/cards/sight/all.jpg" },
+
+    { "id": "sight-are", "word": "ARE", "category": "Sight Words", "soundHint": "Are", "prompt": "Read ARE", "image": "/cards/sight/are.jpg" },
+
+    { "id": "sight-your", "word": "YOUR", "category": "Sight Words", "soundHint": "Your", "prompt": "Read YOUR", "image": "/cards/sight/your.jpg" },
+
+    { "id": "sight-with", "word": "WITH", "category": "Sight Words", "soundHint": "With", "prompt": "Read WITH", "image": "/cards/sight/with.jpg" },
+
+    { "id": "sight-they", "word": "THEY", "category": "Sight Words", "soundHint": "They", "prompt": "Read THEY", "image": "/cards/sight/they.jpg" },
+
+    { "id": "sight-was", "word": "WAS", "category": "Sight Words", "soundHint": "Was", "prompt": "Read WAS", "image": "/cards/sight/was.jpg" },
+
+    { "id": "sight-be", "word": "BE", "category": "Sight Words", "soundHint": "Be", "prompt": "Read BE", "image": "/cards/sight/be.jpg" },
+
+    { "id": "sight-have", "word": "HAVE", "category": "Sight Words", "soundHint": "Have", "prompt": "Read HAVE", "image": "/cards/sight/have.jpg" },
+
+    { "id": "sight-like", "word": "LIKE", "category": "Sight Words", "soundHint": "Like", "prompt": "Read LIKE", "image": "/cards/sight/like.jpg" },
+
+    { "id": "sight-this", "word": "THIS", "category": "Sight Words", "soundHint": "This", "prompt": "Read THIS", "image": "/cards/sight/this.jpg" },
+
+    { "id": "sight-will", "word": "WILL", "category": "Sight Words", "soundHint": "Will", "prompt": "Read WILL", "image": "/cards/sight/will.jpg" },
+
+    { "id": "sight-yes", "word": "YES", "category": "Sight Words", "soundHint": "Yes", "prompt": "Read YES", "image": "/cards/sight/yes.jpg" },
+
+    { "id": "sight-no", "word": "NO", "category": "Sight Words", "soundHint": "No", "prompt": "Read NO", "image": "/cards/sight/no.jpg" },
+
+    { "id": "sight-so", "word": "SO", "category": "Sight Words", "soundHint": "So", "prompt": "Read SO", "image": "/cards/sight/so.jpg" },
+
+    { "id": "sight-if", "word": "IF", "category": "Sight Words", "soundHint": "If", "prompt": "Read IF", "image": "/cards/sight/if.jpg" },
+
+    { "id": "sight-do", "word": "DO", "category": "Sight Words", "soundHint": "Do", "prompt": "Read DO", "image": "/cards/sight/do.jpg" },
+
+    { "id": "sight-has", "word": "HAS", "category": "Sight Words", "soundHint": "Has", "prompt": "Read HAS", "image": "/cards/sight/has.jpg" },
+
+    { "id": "sight-had", "word": "HAD", "category": "Sight Words", "soundHint": "Had", "prompt": "Read HAD", "image": "/cards/sight/had.jpg" },
+
+    { "id": "sight-but", "word": "BUT", "category": "Sight Words", "soundHint": "But", "prompt": "Read BUT", "image": "/cards/sight/but.jpg" },
+
+    { "id": "sight-to", "word": "TO", "category": "Sight Words", "soundHint": "To", "prompt": "Read TO", "image": "/cards/sight/to.jpg" },
+
+    { "id": "sight-into", "word": "INTO", "category": "Sight Words", "soundHint": "Into", "prompt": "Read INTO", "image": "/cards/sight/into.jpg" },
+
+    { "id": "sight-that", "word": "THAT", "category": "Sight Words", "soundHint": "That", "prompt": "Read THAT", "image": "/cards/sight/that.jpg" },
+
+    { "id": "sight-of", "word": "OF", "category": "Sight Words", "soundHint": "Of", "prompt": "Read OF", "image": "/cards/sight/of.jpg" },
+
+    { "id": "sight-from", "word": "FROM", "category": "Sight Words", "soundHint": "From", "prompt": "Read FROM", "image": "/cards/sight/from.jpg" },
+
+    { "id": "sight-then", "word": "THEN", "category": "Sight Words", "soundHint": "Then", "prompt": "Read THEN", "image": "/cards/sight/then.jpg" },
+
+    { "id": "sight-i", "word": "I", "category": "Sight Words", "soundHint": "I", "prompt": "Read I", "image": "/cards/sight/i.jpg" },
+
+    { "id": "sight-am", "word": "AM", "category": "Sight Words", "soundHint": "Am", "prompt": "Read AM", "image": "/cards/sight/am.jpg" },
+
+    { "id": "sight-at", "word": "AT", "category": "Sight Words", "soundHint": "At", "prompt": "Read AT", "image": "/cards/sight/at.jpg" }
+
   ]
 }
