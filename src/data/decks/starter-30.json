@@ -1,0 +1,39 @@
+{
+  "name": "Starter 30",
+  "cards": [
+    { "id": "family-mom", "word": "MOM", "category": "Family", "soundHint": "Mmmom", "prompt": "Where’s MOM?" },
+    { "id": "family-dad", "word": "DAD", "category": "Family", "soundHint": "D-d-dad", "prompt": "Point to DAD." },
+    { "id": "family-baby", "word": "BABY", "category": "Family", "soundHint": "Bay-bee", "prompt": "Where’s the BABY?" },
+    { "id": "family-grandma", "word": "GRANDMA", "category": "Family", "soundHint": "Gran-ma", "prompt": "Say GRANDMA." },
+    { "id": "family-grandpa", "word": "GRANDPA", "category": "Family", "soundHint": "Gran-pa", "prompt": "Wave hi!" },
+
+    { "id": "obj-cup", "word": "CUP", "category": "Objects", "soundHint": "C-c-cup", "prompt": "Find the CUP." },
+    { "id": "obj-ball", "word": "BALL", "category": "Objects", "soundHint": "B-b-ball", "prompt": "Roll the BALL." },
+    { "id": "obj-book", "word": "BOOK", "category": "Objects", "soundHint": "Booook", "prompt": "Get the BOOK." },
+    { "id": "obj-car", "word": "CAR", "category": "Objects", "soundHint": "Caaaar", "prompt": "Vroom-vroom!" },
+    { "id": "obj-shoe", "word": "SHOE", "category": "Objects", "soundHint": "Shooo", "prompt": "Where’s your SHOE?" },
+    { "id": "obj-bed", "word": "BED", "category": "Objects", "soundHint": "Beee-d", "prompt": "Point to the BED." },
+    { "id": "obj-dog", "word": "DOG", "category": "Objects", "soundHint": "D-d-dog", "prompt": "Bark like a DOG." },
+    { "id": "obj-cat", "word": "CAT", "category": "Objects", "soundHint": "Caaat", "prompt": "Meow like a CAT." },
+
+    { "id": "food-milk", "word": "MILK", "category": "Food", "soundHint": "Miiilk", "prompt": "Do you want MILK?" },
+    { "id": "food-banana", "word": "BANANA", "category": "Food", "soundHint": "Ba-na-na", "prompt": "Point to BANANA." },
+    { "id": "food-apple", "word": "APPLE", "category": "Food", "soundHint": "Aaa-pple", "prompt": "Take a bite pretend." },
+    { "id": "food-egg", "word": "EGG", "category": "Food", "soundHint": "Ehhhhg", "prompt": "Crack an EGG motion." },
+    { "id": "food-bread", "word": "BREAD", "category": "Food", "soundHint": "Br-ead", "prompt": "Where’s BREAD?" },
+    { "id": "food-cheese", "word": "CHEESE", "category": "Food", "soundHint": "Cheeeeese", "prompt": "Smile: CHEESE!" },
+
+    { "id": "act-clap", "word": "CLAP", "category": "Actions", "soundHint": "Clap!", "prompt": "Clap together." },
+    { "id": "act-wave", "word": "WAVE", "category": "Actions", "soundHint": "Wa-ve", "prompt": "Wave hi!" },
+    { "id": "act-hug", "word": "HUG", "category": "Actions", "soundHint": "Huuug", "prompt": "Give a HUG." },
+    { "id": "act-jump", "word": "JUMP", "category": "Actions", "soundHint": "Ju-mp", "prompt": "Tiny JUMP." },
+    { "id": "act-sit", "word": "SIT", "category": "Actions", "soundHint": "Sssit", "prompt": "Sit down together." },
+    { "id": "act-dance", "word": "DANCE", "category": "Actions", "soundHint": "Da-nce", "prompt": "Dance 5 seconds." },
+
+    { "id": "color-red", "word": "RED", "category": "Colors", "soundHint": "Rrrred", "prompt": "Find something RED." },
+    { "id": "color-blue", "word": "BLUE", "category": "Colors", "soundHint": "Bloo", "prompt": "Point to BLUE." },
+    { "id": "color-green", "word": "GREEN", "category": "Colors", "soundHint": "Greeeen", "prompt": "Find GREEN." },
+    { "id": "color-yellow", "word": "YELLOW", "category": "Colors", "soundHint": "Yel-low", "prompt": "Show YELLOW." },
+    { "id": "color-black", "word": "BLACK", "category": "Colors", "soundHint": "Blaaack", "prompt": "Find BLACK." }
+  ]
+}
